@@ -5,7 +5,6 @@ using namespace std;
 string encodeString(const string& s) {
     if (s.empty()) return "";
 
-    // Using a stack to keep track of the characters and their counts
     stack<pair<char, int>> stk;
     string result = "";
 
@@ -17,9 +16,7 @@ string encodeString(const string& s) {
         }
     }
 
-    // Construct the encoded string in reverse order
     while (!stk.empty()) {
-        // Prepend the character and its count to the result string
         result = stk.top().first + to_string(stk.top().second) + result;
         stk.pop();
     }
